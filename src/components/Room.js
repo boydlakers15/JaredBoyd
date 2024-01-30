@@ -19,7 +19,7 @@ import { useAtom } from "jotai";
 
 export function Room(props) {
   const group = useRef()
-  const { nodes, materials, animations } = useGLTF('/models/room.glb')
+  const { nodes, materials, animations } = useGLTF('public/models/room.glb')
   const { actions, names } = useAnimations(animations, group)
   const [isHovered, setIsHovered] = useState(false);
   const [isClicked, setIsClicked] = useState(false);
