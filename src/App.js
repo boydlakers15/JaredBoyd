@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import LandingPage from './components/LandingPage';
+import Profile from './components/Profile';
+import SkillsPage from './components/SkillsPage';
+import Navbar from './components/Navbar';
+import About from './components/About';
+import FooterPage from './components/FooterPage';
+import { Experience } from './components/Experience';
+import { UI } from './components/UI';
+
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Router>
+        <Routes>
+        
+            {/* Use the "element" prop instead of "component" */}
+            <Route exact path="/Profile" element={<LandingPage />} />
+            <Route exact path="/Home" element={<Profile />} />
+            <Route exact path="/skills" element={<SkillsPage />} />
+            <Route exact path="/foot" element={<FooterPage />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/exper" element={<Experience />} />
+            <Route exact path="/ui" element={<UI />} />
+            <Route exact path="/nav" element={<Navbar />} />
+        </Routes>
+      </Router>
+    </>
   );
-}
+};
 
 export default App;
